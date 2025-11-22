@@ -2,16 +2,16 @@
 	"schemaVersion": 1,
 	"id": "easy-deepslate-mining",
 	"version": "${version}",
-	"name": "Easy-DeepSlate-Mining",
-	"description": "This is an example description! Tell everyone what your mod is about!",
+	"name": "Easy Deepslate Mining",
+	"description": "Makes deepslate blocks and deepslate ores as easy to mine as regular stone. Perfect for faster mining in the deep dark and underground mining expeditions!",
 	"authors": [
-		"Me!"
+		"Misemise"
 	],
 	"contact": {
-		"homepage": "https://fabricmc.net/",
-		"sources": "https://github.com/FabricMC/fabric-example-mod"
+		"homepage": "https://modrinth.com/mod/easy-deepslate-mining",
+		"sources": ""
 	},
-	"license": "CC0-1.0",
+	"license": "MIT",
 	"icon": "assets/easy-deepslate-mining/icon.png",
 	"environment": "*",
 	"entrypoints": {

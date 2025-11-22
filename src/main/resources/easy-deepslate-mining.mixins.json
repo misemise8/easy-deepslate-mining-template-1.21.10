@@ -3,7 +3,8 @@
 	"package": "net.misemise.mixin",
 	"compatibilityLevel": "JAVA_21",
 	"mixins": [
-		"ExampleMixin"
+		"DeepSlateMiningSpeedMixin",
+		"DeepSlateBlastResistanceMixin"
 	],
 	"injectors": {
 		"defaultRequire": 1
