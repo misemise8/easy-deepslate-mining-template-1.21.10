@@ -1,24 +1,15 @@
 package net.misemise;
 
-import net.fabricmc.api.ModInitializer;
-
+import com.mojang.logging.LogUtils;
+import net.neoforged.fml.common.Mod;
 import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 
-public class EasyDeepSlateMining implements ModInitializer {
-	public static final String MOD_ID = "easy-deepslate-mining";
+@Mod(EasyDeepSlateMining.MOD_ID)
+public class EasyDeepSlateMining {
+	public static final String MOD_ID = "easy_deepslate_mining";
+	public static final Logger LOGGER = LogUtils.getLogger();
 
-	// This logger is used to write text to the console and the log file.
-	// It is considered best practice to use your mod id as the logger's name.
-	// That way, it's clear which mod wrote info, warnings, and errors.
-	public static final Logger LOGGER = LoggerFactory.getLogger(MOD_ID);
-
-	@Override
-	public void onInitialize() {
-		// This code runs as soon as Minecraft is in a mod-load-ready state.
-		// However, some things (like resources) may still be uninitialized.
-		// Proceed with mild caution.
-
-		LOGGER.info("Hello Fabric world!");
+	public EasyDeepSlateMining() {
+		LOGGER.info("Easy Deepslate Mining for NeoForge loaded.");
 	}
 }
