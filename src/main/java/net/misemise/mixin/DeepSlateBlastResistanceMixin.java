@@ -1,7 +1,8 @@
 package net.misemise.mixin;
 
-import net.minecraft.block.Block;
-import net.minecraft.block.Blocks;
+
+import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.Blocks;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Unique;
 import org.spongepowered.asm.mixin.injection.At;
@@ -11,7 +12,7 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 @Mixin(Block.class)
 public class DeepSlateBlastResistanceMixin {
 
-    @Inject(method = "getBlastResistance", at = @At("HEAD"), cancellable = true)
+    @Inject(method = "getExplosionResistance", at = @At("HEAD"), cancellable = true)
     private void restoreDeepSlateBlastResistance(CallbackInfoReturnable<Float> cir) {
         Block block = (Block) (Object) this;
 

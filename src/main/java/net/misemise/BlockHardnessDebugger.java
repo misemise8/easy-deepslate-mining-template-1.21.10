@@ -1,8 +1,9 @@
 package net.misemise;
 
 import net.fabricmc.api.ModInitializer;
-import net.minecraft.block.Block;
-import net.minecraft.block.Blocks;
+import net.minecraft.world.level.Level;
+import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.Blocks;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -20,7 +21,7 @@ public class BlockHardnessDebugger implements ModInitializer {
     }
 
     private void logBlockHardness(String name, Block block) {
-        float hardness = block.getHardness();
+        float hardness = block.defaultBlockState().getDestroySpeed(null,null);
         LOGGER.info("{}: Hardness = {}", name, hardness);
     }
 }
