@@ -21,7 +21,7 @@ repositories {
 }
 
 base {
-	archivesName = project.mod_id
+	archivesName = "${project.mod_id}-${project.minecraft_version}"
 }
 
 def licenseArchiveName = base.archivesName.get()
