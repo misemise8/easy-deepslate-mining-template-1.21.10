@@ -1,26 +1,21 @@
 package net.misemise.mixin;
 
-import net.minecraft.block.BlockState;
-import net.minecraft.block.Blocks;
-import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.level.block.Blocks;
+import net.minecraft.world.level.block.state.BlockState;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Unique;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 
-@Mixin(PlayerEntity.class)
+@Mixin(Player.class)
 public class DeepSlateMiningSpeedMixin {
 
-    @Inject(method = "getBlockBreakingSpeed", at = @At("RETURN"), cancellable = true)
+    @Inject(method = "getDestroySpeed", at = @At("RETURN"), cancellable = true)
     private void modifyDeepSlateMiningSpeed(BlockState block, CallbackInfoReturnable<Float> cir) {
-        // 深層岩系ブロックかどうかを判定
         if (isDeepSlateBlock(block)) {
-            // 元の採掘速度を取得
             float originalSpeed = cir.getReturnValue();
-
-            // 深層岩は硬度が3.0f、石は0.6f
-            // 採掘速度を石と同じにするには、5倍速くする必要がある（3.0 / 0.6 = 5.0）
             float adjustedSpeed = originalSpeed * 2.0f;
             cir.setReturnValue(adjustedSpeed);
         }
